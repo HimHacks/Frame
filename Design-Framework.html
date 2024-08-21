@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>E-Commerce Site</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .carousal_container {
+            width: 1100px;
+            height: 500px;
+            margin: auto;
+        }
+
+        .carousal_container img {
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            width: 70%;
+            margin: auto;
+            border-bottom: 1px solid red;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .products {
+          display: flex;
+          justify-content: space-evenly;
+          padding: 20px 50px;
+          text-align: center;
+        }
+
+        .Product_Container {
+          width: 300px;
+          padding: 20px 40px;
+          background-color: whitesmoke;
+          border-bottom: 5px solid red;
+        }
+
+        .Product_Container p {
+          padding-top: 20px;
+          border-top: 1px solid grey;
+          line-height: 30px;
+        }
+
+        .Product_Container:hover {
+          background-image: url(https://i.ytimg.com/vi/8w-aopi4ARI/maxresdefault.jpg);
+          background-size: cover;
+          background-position: center;
+          transition: background-position 1.5s;
+          color: white;
+          border-top: 5px solid red;
+        }
+
+        .more-info {
+            display: none;
+            padding: 20px;
+            background-color: lightgrey;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleInfo(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none" || element.style.display === "") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="main">
+        <div class="carousal_container">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://i.pcmag.com/imagery/roundups/02BY7N9WahuHYvwm1eBbW7I-42..v1696520638.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://m.media-amazon.com/images/I/81w4nBxLSyL._AC_SX466_.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://hungrygeeks.com.ph/wp-content/uploads/2022/08/ASUS-ZenBook-14-OLED-UM3402Y-Review-Cover-696x357.jpg.webp" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+              <h1>Our Products</h1>
+
+              <div class="products">
+                <div class="Product_Container"> 
+                    <h2>Laptops</h2>
+                    <p>We Deal With All Major Laptop Brands <br> <strong>HP, DELL, ASUS, LENOVO</strong></p>
+                    <button class="btn btn-danger" onclick="toggleInfo('laptop-info')">Know More</button>
+                </div>
+
+                <div id="laptop-info" class="more-info">
+                    <h3>Laptops</h3>
+                    <p>We offer a wide range of laptops from top brands such as HP, Dell, ASUS, and Lenovo. Whether you're looking for a gaming laptop, a business laptop, or something for everyday use, we have something that suits your needs.</p>
+                </div>
+
+                <div class="Product_Container">
+                  <h2>Accessories</h2>
+                  <p>All Computer Accessories like Keyboard, Mouse, Speaker are available here</p>
+                  <button class="btn btn-danger" onclick="toggleInfo('accessories-info')">Know More</button>
+                </div>
+
+                <div id="accessories-info" class="more-info">
+                    <h3>Accessories</h3>
+                    <p>We stock a variety of computer accessories including keyboards, mice, speakers, and more. Enhance your computer setup with our high-quality accessories.</p>
+                </div>
+
+                <div class="Product_Container">
+                  <h2>Gaming Console</h2>
+                  <p>Love Playing Games <br> X-box, Playstation are available here</p>
+                  <button class="btn btn-danger" onclick="toggleInfo('console-info')">Know More</button>
+                </div>
+
+                <div id="console-info" class="more-info">
+                    <h3>Gaming Consoles</h3>
+                    <p>We carry the latest gaming consoles including Xbox and PlayStation. Experience the best in gaming with our top-of-the-line consoles and accessories.</p>
+                </div>
+              </div>
+        </div>
+    </div>
+    
+</body>
+</html>
